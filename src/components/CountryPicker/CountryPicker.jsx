@@ -17,13 +17,14 @@ const CountryPicker = ({ handleCountryChange }) => {
 
 
     return (
-        <FormControl className={styles.container}>
+        <FormControl className={styles.formControl}>
             <NativeSelect defaultValue="" onChange={(e) => (handleCountryChange(e.target.value))}> {/* getting the country name in 'e' and sending it to App.js handle fn */}
                 <option value="global">Global</option>
                     {fetchedCountries.map((country, i) => (
                         <option key={i} value={country}>{country}</option>
                     ))}
             </NativeSelect>
+            <div className={styles.text}>Rotate the screen on mobile phone</div>
         </FormControl>
     );
 }
